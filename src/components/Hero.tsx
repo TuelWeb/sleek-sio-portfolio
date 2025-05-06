@@ -6,7 +6,7 @@ const Hero = () => {
   const { name, title, profileImage, cvUrl } = resumeData.personalInfo;
 
   return (
-    <section id="accueil" className="min-h-screen flex items-center bg-gradient-hero pt-16">
+    <section id="accueil" className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-blue-100 pt-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark-blue">

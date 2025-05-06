@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -29,6 +28,7 @@ export default {
 				'light-gray': '#F6F6F7',
 				'primary-blue': '#3B82F6', 
 				'soft-blue': '#DBEAFE',
+				'primary-teal': '#3B82F6', // Changed to match primary-blue for consistency
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -112,7 +112,6 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-				'gradient-hero': 'linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)',
 				'gradient-about': 'linear-gradient(to top, #accbee 0%, #e7f0fd 100%)',
 				'gradient-skills': 'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)',
 			}
