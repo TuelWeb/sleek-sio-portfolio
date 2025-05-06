@@ -6,12 +6,12 @@ const Hero = () => {
   const { name, title, profileImage, cvUrl } = resumeData.personalInfo;
 
   return (
-    <section id="accueil" className="min-h-screen flex items-center bg-light-gray pt-16">
+    <section id="accueil" className="min-h-screen flex items-center bg-gradient-hero pt-16">
       <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <div className="md:w-1/2 mb-10 md:mb-0 animate-fade-in">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark-blue">
             Bonjour, je suis <br />
-            <span className="block mt-2">{name}</span>
+            <span className="block mt-2 text-primary-blue">{name}</span>
           </h1>
           <p className="text-xl md:text-2xl mb-6 text-gray-600">
             {title}
@@ -24,7 +24,7 @@ const Hero = () => {
             href={cvUrl} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="btn-primary inline-flex items-center"
+            className="bg-primary-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 inline-flex items-center shadow-md hover:shadow-lg"
           >
             <Download size={18} className="mr-2" />
             Télécharger mon CV

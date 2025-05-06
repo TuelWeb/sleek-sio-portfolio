@@ -3,9 +3,9 @@ import resumeData from '@/data/resumeData';
 
 const About = () => {
   return (
-    <section id="a-propos" className="py-20 bg-white">
+    <section id="a-propos" className="py-20 bg-gradient-about">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">À Propos de Moi</h2>
+        <h2 className="section-title text-primary-purple">À Propos de Moi</h2>
         
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
@@ -14,8 +14,8 @@ const About = () => {
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-              <div className="card bg-light-gray">
-                <h3 className="text-xl font-semibold mb-2 text-dark-blue">Qualités</h3>
+              <div className="card bg-soft-purple shadow-md hover:shadow-lg transition-all duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-primary-purple">Qualités</h3>
                 <ul className="list-disc list-inside text-gray-700">
                   <li>Curieux</li>
                   <li>Persévérant</li>
@@ -24,8 +24,8 @@ const About = () => {
                 </ul>
               </div>
               
-              <div className="card bg-light-gray">
-                <h3 className="text-xl font-semibold mb-2 text-dark-blue">Passions</h3>
+              <div className="card bg-soft-teal shadow-md hover:shadow-lg transition-all duration-300">
+                <h3 className="text-xl font-semibold mb-2 text-primary-teal">Passions</h3>
                 <ul className="list-disc list-inside text-gray-700">
                   <li>Développement web</li>
                   <li>Nouvelles technologies</li>

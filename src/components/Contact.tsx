@@ -43,7 +43,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Contact</h2>
+        <h2 className="section-title text-primary-blue">Contact</h2>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -56,9 +56,9 @@ const Contact = () => {
             <div className="space-y-6">
               <a
                 href={`mailto:${resumeData.personalInfo.email}`}
-                className="flex items-center text-gray-700 hover:text-dark-blue transition-colors"
+                className="flex items-center text-gray-700 hover:text-primary-blue transition-colors"
               >
-                <Mail size={24} className="mr-4" />
+                <Mail size={24} className="mr-4 text-primary-blue" />
                 <span>{resumeData.personalInfo.email}</span>
               </a>
               
@@ -66,9 +66,9 @@ const Contact = () => {
                 href={resumeData.personalInfo.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-dark-blue transition-colors"
+                className="flex items-center text-gray-700 hover:text-primary-blue transition-colors"
               >
-                <Github size={24} className="mr-4" />
+                <Github size={24} className="mr-4 text-primary-blue" />
                 <span>GitHub</span>
               </a>
               
@@ -76,9 +76,9 @@ const Contact = () => {
                 href={resumeData.personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center text-gray-700 hover:text-dark-blue transition-colors"
+                className="flex items-center text-gray-700 hover:text-primary-blue transition-colors"
               >
-                <Linkedin size={24} className="mr-4" />
+                <Linkedin size={24} className="mr-4 text-primary-blue" />
                 <span>LinkedIn</span>
               </a>
             </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-blue"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                   placeholder="Votre nom"
                 />
               </div>
@@ -114,7 +114,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-blue"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                   placeholder="Votre email"
                 />
               </div>
@@ -130,7 +130,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-dark-blue"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue"
                   placeholder="Sujet de votre message"
                 />
               </div>
@@ -146,7 +146,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-dark-blue"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary-blue"
                   placeholder="Votre message"
                 ></textarea>
               </div>
@@ -155,7 +155,7 @@ const Contact = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="btn-primary w-full"
+                  className="bg-primary-blue hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 w-full shadow-md hover:shadow-lg"
                 >
                   {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                 </button>

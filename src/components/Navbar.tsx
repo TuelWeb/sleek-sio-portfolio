@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('accueil');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,20 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
+
+      // Update active section based on scroll position
+      const sections = document.querySelectorAll('section');
+      let currentSection = 'accueil';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= (sectionTop - 200)) {
+          currentSection = section.id;
+        }
+      });
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -28,13 +43,13 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <a href="#accueil" className="text-dark-blue font-bricolage text-xl font-bold">
+        <a href="#accueil" className="text-primary-blue font-bricolage text-xl font-bold">
           Portfolio
         </a>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden text-dark-blue"
+          className="md:hidden text-primary-blue"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -44,42 +59,82 @@ const Navbar = () => {
         <nav className="hidden md:flex">
           <ul className="flex space-x-8">
             <li>
-              <a href="#accueil" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#accueil" 
+                className={`hover:text-primary-blue transition-colors ${
+                  activeSection === 'accueil' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                }`}
+              >
                 Accueil
               </a>
             </li>
             <li>
-              <a href="#a-propos" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#a-propos" 
+                className={`hover:text-primary-purple transition-colors ${
+                  activeSection === 'a-propos' ? 'text-primary-purple font-medium' : 'text-gray-700'
+                }`}
+              >
                 À Propos
               </a>
             </li>
             <li>
-              <a href="#parcours" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#parcours" 
+                className={`hover:text-primary-blue transition-colors ${
+                  activeSection === 'parcours' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                }`}
+              >
                 Parcours
               </a>
             </li>
             <li>
-              <a href="#projets" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#projets" 
+                className={`hover:text-primary-orange transition-colors ${
+                  activeSection === 'projets' ? 'text-primary-orange font-medium' : 'text-gray-700'
+                }`}
+              >
                 Projets
               </a>
             </li>
             <li>
-              <a href="#competences" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#competences" 
+                className={`hover:text-primary-teal transition-colors ${
+                  activeSection === 'competences' ? 'text-primary-teal font-medium' : 'text-gray-700'
+                }`}
+              >
                 Compétences
               </a>
             </li>
             <li>
-              <a href="#certifications" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#certifications" 
+                className={`hover:text-primary-purple transition-colors ${
+                  activeSection === 'certifications' ? 'text-primary-purple font-medium' : 'text-gray-700'
+                }`}
+              >
                 Certifications
               </a>
             </li>
             <li>
-              <a href="#epreuves" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#epreuves" 
+                className={`hover:text-primary-pink transition-colors ${
+                  activeSection === 'epreuves' ? 'text-primary-pink font-medium' : 'text-gray-700'
+                }`}
+              >
                 Épreuves
               </a>
             </li>
             <li>
-              <a href="#contact" className="text-dark-blue hover:text-opacity-70 transition-colors">
+              <a 
+                href="#contact" 
+                className={`hover:text-primary-blue transition-colors ${
+                  activeSection === 'contact' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                }`}
+              >
                 Contact
               </a>
             </li>
@@ -94,7 +149,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#accueil" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors" 
+                    className={`block hover:text-primary-blue transition-colors ${
+                      activeSection === 'accueil' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Accueil
@@ -103,7 +160,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#a-propos" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-purple transition-colors ${
+                      activeSection === 'a-propos' ? 'text-primary-purple font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     À Propos
@@ -112,7 +171,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#parcours" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-blue transition-colors ${
+                      activeSection === 'parcours' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Parcours
@@ -121,7 +182,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#projets" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-orange transition-colors ${
+                      activeSection === 'projets' ? 'text-primary-orange font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Projets
@@ -130,7 +193,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#competences" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-teal transition-colors ${
+                      activeSection === 'competences' ? 'text-primary-teal font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Compétences
@@ -139,7 +204,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#certifications" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-purple transition-colors ${
+                      activeSection === 'certifications' ? 'text-primary-purple font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Certifications
@@ -148,7 +215,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#epreuves" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-pink transition-colors ${
+                      activeSection === 'epreuves' ? 'text-primary-pink font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Épreuves
@@ -157,7 +226,9 @@ const Navbar = () => {
                 <li>
                   <a 
                     href="#contact" 
-                    className="block text-dark-blue hover:text-opacity-70 transition-colors"
+                    className={`block hover:text-primary-blue transition-colors ${
+                      activeSection === 'contact' ? 'text-primary-blue font-medium' : 'text-gray-700'
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     Contact

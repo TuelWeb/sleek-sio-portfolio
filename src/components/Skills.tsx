@@ -12,7 +12,7 @@ const SkillBar = ({ name, level }: { name: string; level: number }) => {
       </div>
       <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
         <div 
-          className="h-full bg-dark-blue rounded-full"
+          className="h-full bg-primary-teal rounded-full"
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
@@ -27,9 +27,9 @@ const Skills = () => {
   const secondColumnSkills = resumeData.skills.slice(midPoint);
   
   return (
-    <section id="competences" className="py-20 bg-light-gray">
+    <section id="competences" className="py-20 bg-gradient-skills">
       <div className="container mx-auto px-4">
-        <h2 className="section-title">Compétences</h2>
+        <h2 className="section-title text-primary-teal">Compétences</h2>
         
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -55,7 +55,7 @@ const Skills = () => {
           </div>
           
           <div className="mt-12">
-            <h3 className="text-xl font-semibold mb-6 text-center text-dark-blue">
+            <h3 className="text-xl font-semibold mb-6 text-center text-primary-teal">
               Autres compétences
             </h3>
             
