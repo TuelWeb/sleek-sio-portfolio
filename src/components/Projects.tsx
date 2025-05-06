@@ -3,10 +3,17 @@ import resumeData from '@/data/resumeData';
 import { Github, ExternalLink } from 'lucide-react';
 
 const Projects = () => {
+  // Images d'exemple pour les projets
+  const projectImages = [
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+  ];
+
   return (
-    <section id="projets" className="py-20 bg-gradient-projects">
+    <section id="projets" className="py-20 bg-light-gray">
       <div className="container mx-auto px-4">
-        <h2 className="section-title text-primary-orange">Mes Projets</h2>
+        <h2 className="section-title text-primary-blue">Mes Projets</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {resumeData.projects.map((project, index) => (
@@ -16,13 +23,13 @@ const Projects = () => {
             >
               <div className="h-48 mb-4 overflow-hidden rounded-md bg-light-gray">
                 <img
-                  src={project.image}
+                  src={projectImages[index % projectImages.length]}
                   alt={project.title}
                   className="w-full h-full object-cover"
                 />
               </div>
               
-              <h3 className="text-xl font-semibold mb-2 text-primary-orange">
+              <h3 className="text-xl font-semibold mb-2 text-primary-blue">
                 {project.title}
               </h3>
               
@@ -34,7 +41,7 @@ const Projects = () => {
                 {project.technologies.map((tech, i) => (
                   <span 
                     key={i} 
-                    className="bg-soft-orange text-primary-orange text-sm px-3 py-1 rounded-full"
+                    className="bg-soft-blue text-primary-blue text-sm px-3 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -47,7 +54,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-primary-orange hover:underline"
+                    className="flex items-center text-primary-blue hover:underline"
                   >
                     <Github size={18} className="mr-1" />
                     Code source
@@ -59,7 +66,7 @@ const Projects = () => {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-primary-orange hover:underline"
+                    className="flex items-center text-primary-blue hover:underline"
                   >
                     <ExternalLink size={18} className="mr-1" />
                     Démo

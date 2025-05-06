@@ -28,15 +28,7 @@ export default {
 				'dark-blue': '#1A1F2C',
 				'light-gray': '#F6F6F7',
 				'primary-blue': '#3B82F6', 
-				'primary-purple': '#8B5CF6',
-				'primary-teal': '#14B8A6',
-				'primary-orange': '#F97316',
-				'primary-pink': '#EC4899',
 				'soft-blue': '#DBEAFE',
-				'soft-purple': '#E5DEFF',
-				'soft-teal': '#CCFBF1',
-				'soft-orange': '#FFEDD5',
-				'soft-pink': '#FCE7F3',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -123,8 +115,6 @@ export default {
 				'gradient-hero': 'linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)',
 				'gradient-about': 'linear-gradient(to top, #accbee 0%, #e7f0fd 100%)',
 				'gradient-skills': 'linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%)',
-				'gradient-projects': 'linear-gradient(to right, #ffc3a0 0%, #ffafbd 100%)',
-				'gradient-exams': 'linear-gradient(to top, #d299c2 0%, #fef9d7 100%)'
 			}
 		}
 	},
